@@ -10,6 +10,7 @@ const createNewLine = (data) => {
         data={data}
         options={{
           intersect:true,
+
           mantainAspectRatio:false,
           spanGaps: true,
           title: {
@@ -133,7 +134,8 @@ class Graph extends Component {
           newDataSets.push({
             label: teamName,
             data: homeDataSet,
-            borderWidth: 1
+            borderWidth: 10,
+            fill: false
           })
 
         } else if(nextProps.visitStatusReducer.away === true){
@@ -152,7 +154,8 @@ class Graph extends Component {
           newDataSets.push({
             label: teamName,
             data: awayDataSet,
-            borderWidth: 1
+            borderWidth: 10,
+            fill: false
           })
         } else if(nextProps.visitStatusReducer.both === true){
           currStatus = 'both'
@@ -168,7 +171,8 @@ class Graph extends Component {
           newDataSets.push({
             label: teamName,
             data: bothDataSet,
-            borderWidth: 1
+            borderWidth: 10,
+            fill: false,
           })
         }
       })
